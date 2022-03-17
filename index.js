@@ -31,11 +31,11 @@ inquirer.prompt([
         message: 'Choose a license for your application:',
         name: 'license',
         choices: [
-            {name: 'MIT', value: 'mit'},
-            {name: 'Other', value: 'other'},
-            {name: 'GPLv2', value: 'gplv2'},
-            {name: 'Apache', value: 'apache'},
-            {name: 'GPLv3', value: 'gplv3'}
+            { name: 'MIT', value: 'mit' },
+            { name: 'Other', value: 'other' },
+            { name: 'GPLv2', value: 'gplv2' },
+            { name: 'Apache', value: 'apache' },
+            { name: 'GPLv3', value: 'gplv3' }
         ]
     },
     {
@@ -46,53 +46,55 @@ inquirer.prompt([
         message: 'Please enter you email address:',
         name: 'email'
     },
-]).then( (answers) => {
-    const newReadme = 
-    `# ${answers['title']}
+]).then((answers) => {
+    const newReadme = `
+    
+# ${answers['title']}
 
-    ![License](https://img.shields.io/badge/License-${answers['license']}-blue)
+![License](https://img.shields.io/badge/License-${answers['license']}-blue)
     
-    ## Table of Contents
+## Table of Contents
     
-    1. [Description](#description)
-    2. [Installation](#installation)
-    3. [Usage](#usage)
-    4. [License](#license)
-    5. [Contributing](#contributing)
-    6. [Tests](#tests)
-    7. [Questions](#questions)
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [License](#license)
+5. [Contributing](#contributing)
+6. [Tests](#tests)
+7. [Questions](#questions)
     
-    ## Description
+## Description
     
-    ${answers['description']}
+${answers['description']}
 
-    ## Installation
+## Installation
     
-    ${answers['install']}
+${answers['install']}
 
-    ## Usage
+## Usage
     
-    ${answers['usage']}
+${answers['usage']}
 
-    ## License
+## License
     
-    Covered under the ${answers['license']} license.
+Covered under the ${answers['license']} license.
 
-    ## Contributing
+## Contributing
     
-    ${answers['guidelines']}
+${answers['guidelines']}
 
-    ## Tests
+## Tests
     
-    ${answers['test']}
+${answers['test']}
 
-    ## Questions
+## Questions
     
-    If you have any questions regarding this application, please let me know! Contact me via GitHub or Email:
+If you have any questions regarding this application, please let me know! Contact me via GitHub or Email:
     
-    - [GitHub](https://github.com/${answers['username']})
-    - Email: ${answers['email']}`;
+- [GitHub](https://github.com/${answers['username']})
+- Email: ${answers['email']}`;
     fs.writeFile('./dist/README.md', newReadme, (err) => {
         err ? console.error(err) : console.log('README.md succesfully created!');
     })
 });
+
