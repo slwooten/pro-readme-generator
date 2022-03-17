@@ -43,10 +43,6 @@ inquirer.prompt([
         name: 'username'
     },
     {
-        message: 'Please enter your GitHub profile URL:',
-        name: 'githuburl'
-    },
-    {
         message: 'Please enter you email address:',
         name: 'email'
     },
@@ -96,7 +92,7 @@ inquirer.prompt([
     
     - [GitHub](https://github.com/${answers['username']})
     - Email: ${answers['email']}`;
-    fs.writeFile('sampleREADME.md', newReadme, (err) => {
+    fs.writeFile('./dist/README.md', newReadme, (err) => {
         err ? console.error(err) : console.log('README.md succesfully created!');
     })
 });
