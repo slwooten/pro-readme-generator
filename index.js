@@ -50,4 +50,53 @@ inquirer.prompt([
         message: 'Please enter you email address:',
         name: 'email'
     },
-]).then( (answers) => console.log(answers));
+]).then( (answers) => {
+    const newReadme = 
+    `# ${answers['title']}
+
+    ![License](https://img.shields.io/badge/License-${answers['license']}-blue)
+    
+    ## Table of Contents
+    
+    1. [Description](#description)
+    2. [Installation](#installation)
+    3. [Usage](#usage)
+    4. [License](#license)
+    5. [Contributing](#contributing)
+    6. [Tests](#tests)
+    7. [Questions](#questions)
+    
+    ## Description
+    
+    ${answers['description']}
+
+    ## Installation
+    
+    ${answers['install']}
+
+    ## Usage
+    
+    ${answers['usage']}
+
+    ## License
+    
+    Covered under the ${answers['license']} license.
+
+    ## Contributing
+    
+    ${answers['guidelines']}
+
+    ## Tests
+    
+    ${answers['test']}
+
+    ## Questions
+    
+    If you have any questions regarding this application, please let me know! Contact me via GitHub or Email:
+    
+    - [GitHub](https://github.com/${answers['username']})
+    - Email: ${answers['email']}`;
+    fs.writeFile('sampleREADME.md', newReadme, (err) => {
+        err ? console.error(err) : console.log('README.md succesfully created!');
+    })
+});
