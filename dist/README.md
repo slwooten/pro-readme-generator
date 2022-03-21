@@ -1,13 +1,13 @@
 
     
-# Example Application
+# Example Repo
 
 ![License](https://img.shields.io/badge/License-apache-blue)
     
 ## Table of Contents
     
 1. [Description](#description)
-2. [Installation](#installation)
+2. [Installation](#installation) 
 3. [Usage](#usage)
 4. [License](#license)
 5. [Contributing](#contributing)
@@ -16,11 +16,11 @@
     
 ## Description
     
-This is an example for my homework 
+Here is a description for the example
 
 ## Installation
     
-It's super easy to install
+Intallation is free
 
 ## Usage
     
